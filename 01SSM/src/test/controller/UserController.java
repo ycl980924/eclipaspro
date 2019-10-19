@@ -18,6 +18,7 @@ import test.service.user.IUserService;
 @Controller
 public class UserController {
 	
+	//注释
 	@Autowired
 	private IUserService  userService;
 	
