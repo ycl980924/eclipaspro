@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.mapper.user.UserMapper">
+     <select id="CheckUserDao" parameterType="test.pojo.user.UserPojo" resultType="test.pojo.user.UserPojo">
+          select * from uuser where username = #{username} and password = #{password}
+     </select>
+     
+     <update id="EditPwdByNameDao" parameterType="test.pojo.user.UserPojo">
+          update uuser set password = #{password} where username = #{username}
+     </update>
+     
+     <insert id="RegisterUserDao" parameterType="test.pojo.user.UserPojo">
+          insert into uuser (username , password) values (#{username},#{password})
+     </insert>
+     
+     <delete id="delUser" parameterType="String">
+          delete from uuser where id = #{id}     
+     </delete>
+</mapper>
